@@ -5,7 +5,7 @@
 @section('content')
 
    <div class="text-center">
-      <img src="{{ $book->image }}" alt="" class="img-fluid" style="height: 400px">
+      <img src="{{ asset($book->image) }}" alt="" class="img-fluid" style="height: 400px">
    </div>
 
    <div>
