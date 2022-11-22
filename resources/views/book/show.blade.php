@@ -5,8 +5,7 @@
 @section('content')
 
    <div class="text-center">
-      <img src="https://imgv2-1-f.scribdassets.com/img/word_document/388995164/original/216x287/7a9e4c40a2/1665131937?v=1"
-         alt="" class="img-fluid" style="height: 400px">
+      <img src="{{ $book->image }}" alt="" class="img-fluid" style="height: 400px">
    </div>
 
    <div>
