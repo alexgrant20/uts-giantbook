@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [BookController::class, 'index'])->name('book.index');
-Route::get('/book/{book}', [BookController::class, 'show'])->name('book.show');
+Route::controller(BookController::class)->name('book.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/book/{book}', 'show')->name('show');
+});
+
 Route::get('/category/{category}', [CategoryController::class, 'show'])->name('category.show');
 
 Route::prefix('/publisher')->controller(PublisherController::class)->name('publisher.')->group(function () {
@@ -26,5 +29,7 @@ Route::prefix('/publisher')->controller(PublisherController::class)->name('publi
     Route::get('/{publisher}', 'show')->name('show');
 });
 
-Route::post('/subscribe', [GeneralController::class, 'subscribe'])->name('subscribe');
-Route::get('/contact', [GeneralController::class, 'contact'])->name('contact');
+Route::controller(GeneralController::class)->group(function () {
+    Route::post('/subscribe', 'subscribe')->name('subscribe');
+    Route::get('/contact', 'contact')->name('contact');
+});
