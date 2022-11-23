@@ -10,7 +10,7 @@
                <img src="{{ $publisher->image }}" alt="" class="rounded-circle" style="width: 75px; height: 75px;">
                <div class="d-flex flex-column gap-2 text-dark">
                   <span>{{ $publisher->name }}</span>
-                  <span>{{ $publisher->email }}</span>
+                  <span>{{ $publisher->address }}</span>
                </div>
             </div>
          </a>
